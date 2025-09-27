@@ -1,0 +1,45 @@
+// Inspiration: https://tsconfig.guide/
+// Reference Documentation: https://www.totaltypescript.com/tsconfig-cheat-sheet
+{
+	// Visit https://aka.ms/tsconfig to read more about this file
+	"compilerOptions": {
+		// File Layout
+		"rootDir": "./src",
+		"outDir": "./dist",
+
+		// Environment Settings
+		// See also https://aka.ms/tsconfig/module
+		"module": "nodenext",
+		// TODO: Update target to a fixed version like es2020 or es2022
+		"target": "esnext",
+		// For nodejs:
+		"lib": ["esnext"],
+		"types": ["node"],
+
+		// Allow JS and JSON files to be imported
+		"allowJs": true,
+		"resolveJsonModule": true,
+
+		// Stricter Typechecking Options
+		"noUncheckedIndexedAccess": true,
+		"exactOptionalPropertyTypes": true,
+
+		// Style Options
+		// "noImplicitReturns": true,
+		// "noImplicitOverride": true,
+		// "noUnusedLocals": true,
+		// "noUnusedParameters": true,
+		// "noFallthroughCasesInSwitch": true,
+		// "noPropertyAccessFromIndexSignature": true,
+
+		// Recommended Options
+		"strict": true,
+		"esModuleInterop": true,
+		"isolatedModules": true,
+		"noUncheckedSideEffectImports": true,
+		"moduleDetection": "force",
+		"skipLibCheck": true
+	},
+	"include": ["src"],
+	"exclude": ["node_modules", "dist"]
+}

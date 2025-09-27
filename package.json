@@ -1,0 +1,40 @@
+{
+	"name": "fastify-project-base",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"dev": "ts-node-dev ./src/server.ts",
+		"start": "npm run build && NODE_ENV=production node ./dist/server.js",
+		"build": "rimraf ./dist && tsc",
+		"build:clean": "tsc --build --clean",
+		"clean": "rimraf ./dist **/*.tsbuildinfo node_modules/.cache",
+		"lint": "biome check",
+		"lint:fix": "biome check --write",
+		"format": "biome format --write",
+		"test": "vitest"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"@dotenvx/dotenvx": "^1.51.0",
+		"@types/node": "^24.5.2",
+		"rimraf": "^6.0.1",
+		"ts-node-dev": "^2.0.0",
+		"typescript": "^5.9.2",
+		"vitest": "^3.2.4"
+	},
+	"dependencies": {
+		"@biomejs/biome": "^2.2.4",
+		"@fastify/autoload": "^6.3.1",
+		"@fastify/swagger": "^9.5.2",
+		"@fastify/swagger-ui": "^5.2.3",
+		"@fastify/type-provider-typebox": "^6.0.0",
+		"@sinclair/typebox": "^0.34.41",
+		"fastify": "^5.6.1",
+		"fastify-plugin": "^5.0.1",
+		"pino-pretty": "^13.1.1",
+		"zod": "^4.1.11"
+	}
+}
