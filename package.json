@@ -12,7 +12,8 @@
 		"lint": "biome check",
 		"lint:fix": "biome check --write",
 		"format": "biome format --write",
-		"test": "vitest"
+		"test": "vitest",
+		"generate-example-env": "dotenvx ext genexample"
 	},
 	"keywords": [],
 	"author": "",
