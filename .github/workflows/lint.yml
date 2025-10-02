@@ -1,13 +1,11 @@
 name: Lint
 
 on:
-    push:
-        branches: ["main"]
     pull_request:
         branches: ["main"]
 
 jobs:
-    build:
+    lint:
         runs-on: ubuntu-latest
 
         steps:
