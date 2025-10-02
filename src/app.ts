@@ -8,7 +8,7 @@ import type {
 
 export interface AppOptions
 	extends FastifyServerOptions,
-	Partial<AutoloadPluginOptions> { }
+		Partial<AutoloadPluginOptions> {}
 
 export const options: AppOptions = {
 	ajv: {

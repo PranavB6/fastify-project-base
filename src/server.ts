@@ -1,11 +1,9 @@
-import '@dotenvx/dotenvx/config'
-import Fastify, { FastifyLoggerOptions } from "fastify";
+import "@dotenvx/dotenvx/config";
+import Fastify, { type FastifyLoggerOptions } from "fastify";
+import type { PinoLoggerOptions } from "fastify/types/logger";
 import fp from "fastify-plugin";
-
 import app, { options } from "./app";
 import { config } from "./config";
-import { PinoLoggerOptions } from 'fastify/types/logger';
-import { get } from 'http';
 
 async function init() {
 	const server = Fastify({
@@ -31,14 +29,13 @@ async function init() {
 function getLoggerOptions():
 	| boolean
 	| (FastifyLoggerOptions & PinoLoggerOptions) {
-
 	if (config.logPrettyPrint) {
 		return {
 			level: config.logLevel,
 			transport: {
-				target: 'pino-pretty',
+				target: "pino-pretty",
 				options: {
-					translateTime: 'SYS:standard',
+					translateTime: "SYS:standard",
 				},
 			},
 			serializers: {
@@ -55,7 +52,7 @@ function getLoggerOptions():
 					route: response.request?.url,
 				}),
 			},
-		}
+		};
 	}
 
 	return {
@@ -74,8 +71,7 @@ function getLoggerOptions():
 				route: response.request?.url,
 			}),
 		},
-	}
+	};
 }
-
 
 init();
